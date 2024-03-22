@@ -1,19 +1,23 @@
 import { Link } from "react-router-dom";
 import { FaShoppingBag } from "react-icons/fa";
-import { IoFastFood } from "react-icons/io5";
+import { IoFastFood, IoLogInOutline } from "react-icons/io5";
 
 
 const Header = () => {
-    const user = true;
+    const user = false;
 
     //Navlink
     const links = <>
+        <li><a className="font-bold text-xl flex items-center gap-2"><IoFastFood /> FoodRocket</a></li>
+        <li><Link to="/login"><IoLogInOutline />Login to your account!</Link></li>
+        <hr />
         <li><Link to="/">Home</Link></li>
         <li><Link to="/menu">Menu</Link></li>
         <li><Link to="/cart" className="flex">Cart</Link></li>
         <li><Link to="/login"><button className="navbtn rounded-lg">Login</button></Link></li>
     </>
     const linksPrivate = <>
+        <li><a className="font-bold text-xl flex items-center gap-2"><IoFastFood /> FoodRocket</a></li>
         <li className="whitespace-nowrap flex-row">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
@@ -26,6 +30,7 @@ const Header = () => {
                 {'user.email'}
             </div>
         </li>
+        <hr />
         <li><Link to="/">Home</Link></li>
         <li><Link to="/menu">Menu</Link></li>
         <li><Link to="/cart" className="flex">Cart<sup className="text-xs text-red-600">{5}</sup></Link></li>
@@ -48,7 +53,7 @@ const Header = () => {
                         </div>
                         <div className="drawer-side">
                             <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
-                            <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
+                            <ul className="menu p-4 w-80 min-h-full bg-prim text-white">
                                 {/* Sidebar content here */}
                                 {user ? linksPrivate : links}
                             </ul>
