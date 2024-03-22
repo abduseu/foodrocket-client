@@ -39,7 +39,7 @@ const Header = () => {
 
     return (
         <div className="py-4">
-            <div className="navbar px-0 text-white">
+            <div className="navbar px-0 text">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -53,7 +53,7 @@ const Header = () => {
                         </div>
                         <div className="drawer-side">
                             <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
-                            <ul className="menu p-4 w-80 min-h-full bg-prim text-white">
+                            <ul className="menu p-4 w-80 min-h-full bg-prim text">
                                 {/* Sidebar content here */}
                                 {user ? linksPrivate : links}
                             </ul>

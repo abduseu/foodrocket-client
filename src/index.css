@@ -15,12 +15,14 @@ body{
 /* 
 Color code:
 navy black  : #0F298B #000
+red  black  : #DD0A37 #000
 geen orange : #036351 #FF6200
 */
 
 :root {
     --primary-color: #036351;
     --secondary-color: #FF6200;
+    --text-color: #fff;
   }
   
   body{
@@ -35,18 +37,21 @@ geen orange : #036351 #FF6200
   .active{
     color: var(--primary-color);
   }
+
+  .text{
+    color: var(--text-color);
+  }
   
   .bg-prim{
     background-color: var(--primary-color);
   }
-  
   .prim{
     color: var(--primary-color);
   }
+
   .bg-seco{
     background-color: var(--secondary-color);
   }
-  
   .seco{
     color: var(--secondary-color);
   }
@@ -58,9 +63,15 @@ geen orange : #036351 #FF6200
   .bg-green{
     background-color: #16A34A;
   }
-  
   .green{
     color: #16A34A;
+  }
+
+  .bg-red{
+    background-color: #DD0A37;
+  }
+  .red{
+    color: #DD0A37;
   }
   
   .btn-prim{
