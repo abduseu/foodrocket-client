@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import Root from "./components/Root";
 import HomePage from "./pages/HomePage";
+import ErrorPage from "./pages/ErrorPage";
 
 
 
@@ -14,7 +15,7 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <Root/>,
-    errorElement: <h2>Page Not Found!!!</h2>,
+    errorElement: <ErrorPage/>,
     children: [
       {
         path: '/',
