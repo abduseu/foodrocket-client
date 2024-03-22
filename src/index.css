@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+    margin: 0;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+/* 
+Color code:
+navy black  : #0F298B #000
+geen orange : #036351 #FF6200
+*/
+
+:root {
+    --primary-color: #036351;
+    --secondary-color: #FF6200;
+  }
+  
+  body{
+      font-family: 'Poppins', sans-serif;
+      /* background-color: #FAFAFA; */
+  }
+  
+  span{
+    color: var(--primary-color);
+  }
+  
+  .active{
+    color: var(--primary-color);
+  }
+  
+  .bg-prim{
+    background-color: var(--primary-color);
+  }
+  
+  .prim{
+    color: var(--primary-color);
+  }
+  .bg-seco{
+    background-color: var(--secondary-color);
+  }
+  
+  .seco{
+    color: var(--secondary-color);
+  }
+  
+  .bg-gray{
+    background-color: #f2f2f7;
+  }
+  
+  .bg-green{
+    background-color: #16A34A;
+  }
+  
+  .green{
+    color: #16A34A;
+  }
+  
+  .btn-prim{
+    padding: 8px 24px;
+    font-weight: 700;
+    border-radius: 8px;
+    background-color: var(--primary-color);
+    color: #fff;
+  }
+  .btn-seco{
+    padding: 8px 24px;
+    font-weight: 700;
+    border-radius: 8px;
+    background-color: var(--secondary-color);
+    color: #fff;
+  }
