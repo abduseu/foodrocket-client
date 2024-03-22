@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { FaShoppingBag } from "react-icons/fa";
+import { FaHeart, FaShoppingBag } from "react-icons/fa";
 import { IoFastFood, IoLogInOutline } from "react-icons/io5";
 
 
@@ -13,7 +13,7 @@ const Header = () => {
         <hr />
         <li><Link to="/">Home</Link></li>
         <li><Link to="/menu">Menu</Link></li>
-        <li><Link to="/cart" className="flex">Cart</Link></li>
+        <li><Link to="/favorite" className="flex">Favorites</Link></li>
         <li><Link to="/login"><button className="navbtn rounded-lg">Login</button></Link></li>
     </>
     const linksPrivate = <>
@@ -33,7 +33,7 @@ const Header = () => {
         <hr />
         <li><Link to="/">Home</Link></li>
         <li><Link to="/menu">Menu</Link></li>
-        <li><Link to="/cart" className="flex">Cart<sup className="text-xs text-red-600">{5}</sup></Link></li>
+        <li><Link to="/favorite" className="flex">Favorites</Link></li>
         <li><Link>Signout</Link></li>
     </>
 
@@ -57,7 +57,6 @@ const Header = () => {
                                 {/* Sidebar content here */}
                                 {user ? linksPrivate : links}
                             </ul>
-
                         </div>
                     </div>
                 </div>
@@ -66,16 +65,19 @@ const Header = () => {
                 </div>
                 <div className="navbar-end">
                     <button className="btn btn-ghost btn-circle">
+                        <FaHeart /><sup className="text-xs seco">{0}</sup>
+                    </button>
+                    <button className="btn btn-ghost btn-circle">
                         <FaShoppingBag /><sup className="text-xs seco">{5}</sup>
                     </button>
                 </div>
             </div>
-            <div>
-                <form className="bg-white flex rounded-full">
+            <div className="pb-4">
+                <form className="bg-white flex rounded-lg">
                     <button className="btn btn-ghost btn-circle">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="black"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
                     </button>
-                    <input type="text" name="search" placeholder="Search Restaurant" className="focus:outline-none rounded-full w-full" />
+                    <input type="text" name="search" placeholder="Search Restaurant" className="focus:outline-none rounded-lg w-full" />
                 </form>
             </div>
         </div>
