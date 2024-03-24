@@ -1,10 +1,20 @@
 import { Link } from "react-router-dom";
 import { FaHeart, FaShoppingBag } from "react-icons/fa";
 import { IoFastFood, IoLogInOutline } from "react-icons/io5";
-
+import useAuth from "../hooks/useAuth";
 
 const Header = () => {
-    const user = false;
+    const { user, logOut, loading } = useAuth()
+
+    const handleSignout = () => {
+        logOut()
+            .then(() => {
+                console.log('Signout Successful!')
+            })
+            .catch((error) => {
+                console.log(error.message)
+            });
+    }
 
     //Navlink
     const links = <>
@@ -12,29 +22,28 @@ const Header = () => {
         <li><Link to="/login"><IoLogInOutline />Login to your account!</Link></li>
         <hr />
         <li><Link to="/">Home</Link></li>
-        <li><Link to="/menu">Menu</Link></li>
         <li><Link to="/favorite" className="flex">Favorites</Link></li>
-        <li><Link to="/login"><button className="navbtn rounded-lg">Login</button></Link></li>
+        <li><Link to="/signup"><button className="navbtn rounded-lg">Create an Account</button></Link></li>
     </>
     const linksPrivate = <>
         <li><a className="font-bold text-xl flex items-center gap-2"><IoFastFood /> FoodRocket</a></li>
-        <li className="whitespace-nowrap flex-row">
+        <li className="whitespace-nowrap flex-row items-center">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
-                    <img src={user.photoURL} />
+                    <img src={!loading ? user?.photoURL : ''} />
                 </div>
             </label>
             <div>
-                {'user.displayName'}
+                {user?.displayName}
                 <br />
-                {'user.email'}
+                {user?.email}
             </div>
         </li>
         <hr />
         <li><Link to="/">Home</Link></li>
-        <li><Link to="/menu">Menu</Link></li>
+        <li><Link to="/profile">Profile</Link></li>
         <li><Link to="/favorite" className="flex">Favorites</Link></li>
-        <li><Link>Signout</Link></li>
+        <li><Link onClick={handleSignout}>Signout</Link></li>
     </>
 
     return (
