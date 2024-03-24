@@ -1,0 +1,69 @@
+[
+    {
+      "name": "Spice Delight",
+      "deal": 15,
+      "address": "123 Curry Lane, New York, NY, 10001, United States",
+      "area": "New York",
+      "phone": "+1 1234567890",
+      "email": "owner1@gmail.com",
+      "status": "open",
+      "verification": "verified",
+      "hours": "9:00 AM - 10:00 PM"
+    },
+    {
+      "name": "Taste of India",
+      "deal": 10,
+      "address": "456 Masala Street, New York, NY, 10002, United States",
+      "area": "New York",
+      "phone": "+1 2345678901",
+      "email": "owner1@gmail.com",
+      "status": "open",
+      "verification": "verified",
+      "hours": "10:00 AM - 9:00 PM"
+    },
+    {
+      "name": "Curry House",
+      "deal": 20,
+      "address": "789 Spices Avenue, New York, NY, 10003, United States",
+      "area": "New York",
+      "phone": "+1 3456789012",
+      "email": "owner1@gmail.com",
+      "status": "open",
+      "verification": "verified",
+      "hours": "11:00 AM - 10:00 PM"
+    },
+    {
+      "name": "Saffron Palace",
+      "deal": 18,
+      "address": "1011 Naan Road, New York, NY, 10004, United States",
+      "area": "New York",
+      "phone": "+1 4567890123",
+      "email": "owner1@gmail.com",
+      "status": "open",
+      "verification": "verified",
+      "hours": "10:30 AM - 9:30 PM"
+    },
+    {
+      "name": "Chutney Corner",
+      "deal": 12,
+      "address": "1213 Papadum Street, New York, NY, 10005, United States",
+      "area": "New York",
+      "phone": "+1 5678901234",
+      "email": "owner1@gmail.com",
+      "status": "open",
+      "verification": "verified",
+      "hours": "9:30 AM - 9:30 PM"
+    },
+    {
+      "name": "Spicy Bites",
+      "deal": 14,
+      "address": "1415 Tandoori Lane, New York, NY, 10006, United States",
+      "area": "New York",
+      "phone": "+1 6789012345",
+      "email": "owner1@gmail.com",
+      "status": "open",
+      "verification": "verified",
+      "hours": "10:00 AM - 10:00 PM"
+    }
+  ]
+  
