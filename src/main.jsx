@@ -10,6 +10,8 @@ import Root from "./components/Root";
 import HomePage from "./pages/HomePage";
 import ErrorPage from "./pages/ErrorPage";
 import AuthProvider from "./providers/AuthProvider";
+import LoginPage from "./pages/LoginPage";
+import SignupPage from "./pages/SignupPage";
 
 
 
@@ -22,6 +24,14 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <HomePage/>,
+      },
+      {
+        path: '/login',
+        element: <LoginPage/>,
+      },
+      {
+        path: '/signup',
+        element: <SignupPage/>,
       },
     ]
   }
