@@ -24,6 +24,9 @@ import MenuUpdate from "./pages/restaurant/MenuUpdate";
 import RiderProfile from "./pages/rider/RiderProfile";
 import ReceivedTasks from "./pages/rider/ReceivedTasks";
 import SingleTask from "./pages/rider/SingleTask";
+import AdminProfile from "./pages/admin/AdminProfile";
+import ManageUsers from "./pages/admin/ManageUsers";
+import ManageRestaurants from "./pages/admin/ManageRestaurants";
 
 
 
@@ -108,15 +111,15 @@ const router = createBrowserRouter([
       // Admin Dashboard
       {
         path: '/admin',
-        element: <Private><HomePage/></Private>,
+        element: <Private><AdminProfile/></Private>,
       },
       {
         path: '/manage-users',
-        element: <Private><HomePage/></Private>,
+        element: <Private><ManageUsers/></Private>,
       },
       {
-        path: '/manage-restaurant',
-        element: <Private><HomePage/></Private>,
+        path: '/manage-restaurants',
+        element: <Private><ManageRestaurants/></Private>,
       },
     ]
   }
