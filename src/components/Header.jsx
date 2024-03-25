@@ -69,7 +69,7 @@ const Header = () => {
                                 <FaShoppingBag /><sup className="text-xs seco">{5}</sup>
                             </button>
                         </Link> :
-                        <h3 className="loading loading-spinner loading-sm"></h3>
+                        user && <h3 className="loading loading-spinner loading-sm"></h3>
                     }
                 </div>
             </div>
