@@ -16,6 +16,11 @@ import Private from "./components/Private";
 import Favorite from "./pages/user/Favorite";
 import Profile from "./pages/user/Profile";
 import PlacedOrders from "./pages/user/PlacedOrders";
+import RestaurantProfile from "./pages/restaurant/RestaurantProfile";
+import Menu from "./pages/restaurant/Menu";
+import ReceivedOrders from "./pages/restaurant/ReceivedOrders";
+import MenuAdd from "./pages/restaurant/MenuAdd";
+import MenuUpdate from "./pages/restaurant/MenuUpdate";
 
 
 
@@ -64,23 +69,23 @@ const router = createBrowserRouter([
       // Restaurant Dashboard
       {
         path: '/restaurant',
-        element: <Private><HomePage/></Private>,
+        element: <Private><RestaurantProfile/></Private>,
       },
       {
-        path: '/restaurant/menu',
-        element: <Private><HomePage/></Private>,
+        path: '/menu',
+        element: <Private><Menu/></Private>,
       },
       {
-        path: '/restaurant/menu/add',
-        element: <Private><HomePage/></Private>,
+        path: '/menu/add',
+        element: <Private><MenuAdd/></Private>,
       },
       {
-        path: '/restaurant/menu/update/:id',
-        element: <Private><HomePage/></Private>,
+        path: '/menu/update/:id',
+        element: <Private><MenuUpdate/></Private>,
       },
       {
-        path: '/restaurant/orders',
-        element: <Private><HomePage/></Private>,
+        path: '/received-orders',
+        element: <Private><ReceivedOrders/></Private>,
       },
 
       // Rider Dashboard
