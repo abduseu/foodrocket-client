@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
-import { FaHeart, FaShoppingBag } from "react-icons/fa";
+import { FaShoppingBag } from "react-icons/fa";
 import { IoFastFood, IoLogInOutline } from "react-icons/io5";
 import useAuth from "../hooks/useAuth";
+import useAxios from "../hooks/useAxios";
 
 const Header = () => {
     const { user, logOut, loading } = useAuth()
+    const { role } = useAxios(`/users/${user?.email}`)
 
     const handleSignout = () => {
         logOut()
@@ -22,7 +24,6 @@ const Header = () => {
         <li><Link to="/login"><IoLogInOutline />Login to your account!</Link></li>
         <hr />
         <li><Link to="/">Home</Link></li>
-        <li><Link to="/favorite" className="flex">Favorites</Link></li>
         <li><Link to="/signup"><button className="navbtn rounded-lg">Create an Account</button></Link></li>
     </>
     const linksPrivate = <>
@@ -41,8 +42,7 @@ const Header = () => {
         </li>
         <hr />
         <li><Link to="/">Home</Link></li>
-        <li><Link to="/profile">Profile</Link></li>
-        <li><Link to="/favorite" className="flex">Favorites</Link></li>
+        <li><Link to={`/${role}`}>Dashboard</Link></li>
         <li><Link onClick={handleSignout}>Signout</Link></li>
     </>
 
@@ -73,12 +73,14 @@ const Header = () => {
                     <a className="font-bold text-xl flex items-center gap-2"><IoFastFood /> FoodRocket</a>
                 </div>
                 <div className="navbar-end">
-                    <button className="btn btn-ghost btn-circle">
-                        <FaHeart /><sup className="text-xs seco">{0}</sup>
-                    </button>
-                    <button className="btn btn-ghost btn-circle">
-                        <FaShoppingBag /><sup className="text-xs seco">{5}</sup>
-                    </button>
+                    {role === 'user' ?
+                        <Link to={'/cart'}>
+                            <button className="btn btn-ghost btn-circle">
+                                <FaShoppingBag /><sup className="text-xs seco">{5}</sup>
+                            </button>
+                        </Link> :
+                        <h3 className="loading loading-spinner loading-sm"></h3>
+                    }
                 </div>
             </div>
             <div className="pb-4">
