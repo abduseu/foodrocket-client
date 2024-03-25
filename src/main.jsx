@@ -15,6 +15,7 @@ import SignupPage from "./pages/SignupPage";
 import Private from "./components/Private";
 import Favorite from "./pages/user/Favorite";
 import Profile from "./pages/user/Profile";
+import PlacedOrders from "./pages/user/PlacedOrders";
 
 
 
@@ -57,7 +58,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/placed-orders',
-        element: <Private><HomePage/></Private>,
+        element: <Private><PlacedOrders/></Private>,
       },
 
       // Restaurant Dashboard
