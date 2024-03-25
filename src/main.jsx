@@ -28,6 +28,7 @@ import AdminProfile from "./pages/admin/AdminProfile";
 import ManageUsers from "./pages/admin/ManageUsers";
 import ManageRestaurants from "./pages/admin/ManageRestaurants";
 import ViewRestaurant from "./pages/ViewRestaurant";
+import Cart from "./pages/Cart";
 
 
 
@@ -66,7 +67,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/cart',
-        element: <Private><HomePage/></Private>,
+        element: <Private><Cart/></Private>,
       },
       {
         path: '/placed-orders',
