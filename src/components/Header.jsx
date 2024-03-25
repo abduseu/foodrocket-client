@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { FaShoppingBag } from "react-icons/fa";
+import { FaRegNewspaper, FaShoppingBag } from "react-icons/fa";
 import { IoFastFood, IoLogInOutline } from "react-icons/io5";
 import useAuth from "../hooks/useAuth";
 import useAxios from "../hooks/useAxios";
@@ -20,14 +20,14 @@ const Header = () => {
 
     //Navlink
     const links = <>
-        <li><a className="font-bold text-xl flex items-center gap-2"><IoFastFood /> FoodRocket</a></li>
-        <li><Link to="/login"><IoLogInOutline />Login to your account!</Link></li>
+        <li><Link to={'/'} className="font-bold text-xl flex items-center gap-2"><IoFastFood /> FoodRocket</Link></li>
         <hr />
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/signup"><button className="navbtn rounded-lg">Create an Account</button></Link></li>
+        <li><Link to="/login"><IoLogInOutline />Login to your account!</Link></li>
+        {/* <li><Link to="/">Home</Link></li> */}
+        <li><Link to="/signup"><FaRegNewspaper />Create an Account</Link></li>
     </>
     const linksPrivate = <>
-        <li><a className="font-bold text-xl flex items-center gap-2"><IoFastFood /> FoodRocket</a></li>
+        <li><Link to={'/'} className="font-bold text-xl flex items-center gap-2"><IoFastFood /> FoodRocket</Link></li>
         <li className="whitespace-nowrap flex-row items-center">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
@@ -51,22 +51,12 @@ const Header = () => {
             <div className="navbar px-0 text">
                 <div className="navbar-start">
                     <div className="dropdown">
-                        <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-                        <div className="drawer-content flex flex-col items-center justify-center">
-                            {/* Page content here */}
-                            <label htmlFor="my-drawer-2" className="drawer-button">
-                                <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
-                                </div>
-                            </label>
+                        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
                         </div>
-                        <div className="drawer-side">
-                            <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
-                            <ul className="menu p-4 w-80 min-h-full bg-prim text">
-                                {/* Sidebar content here */}
-                                {user ? linksPrivate : links}
-                            </ul>
-                        </div>
+                        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-green-900 rounded-lg w-60">
+                            {user ? linksPrivate : links}
+                        </ul>
                     </div>
                 </div>
                 <div className="navbar-center">

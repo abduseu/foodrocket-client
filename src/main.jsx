@@ -14,6 +14,7 @@ import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import Private from "./components/Private";
 import Favorite from "./pages/user/Favorite";
+import Profile from "./pages/user/Profile";
 
 
 
@@ -44,7 +45,7 @@ const router = createBrowserRouter([
       // Users Dashboard
       {
         path: '/user',
-        element: <Private><HomePage/></Private>,
+        element: <Private><Profile/></Private>,
       },
       {
         path: '/favorite',
