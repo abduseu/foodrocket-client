@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import { FaRegNewspaper, FaShoppingBag } from "react-icons/fa";
+import { FaGlobeAmericas, FaRegNewspaper, FaShoppingBag } from "react-icons/fa";
 import { IoFastFood, IoLogInOutline } from "react-icons/io5";
 import useAuth from "../hooks/useAuth";
 import useAxios from "../hooks/useAxios";
 
 const Header = () => {
-    const { user, logOut, loading } = useAuth()
+    const { user, logOut } = useAuth()
     const { role } = useAxios(`/users/${user?.email}`)
 
     const handleSignout = () => {
@@ -23,7 +23,6 @@ const Header = () => {
         <li><Link to={'/'} className="font-bold text-xl flex items-center gap-2"><IoFastFood /> FoodRocket</Link></li>
         <hr />
         <li><Link to="/login"><IoLogInOutline />Login to your account!</Link></li>
-        {/* <li><Link to="/">Home</Link></li> */}
         <li><Link to="/signup"><FaRegNewspaper />Create an Account</Link></li>
     </>
     const linksPrivate = <>
@@ -63,13 +62,20 @@ const Header = () => {
                     <a className="font-bold text-xl flex items-center gap-2"><IoFastFood /> FoodRocket</a>
                 </div>
                 <div className="navbar-end">
-                    {role === 'user' ?
+                    {user && role === undefined && <h3 className="loading loading-spinner loading-sm"></h3>}
+                    {role === 'user' &&
                         <Link to={'/cart'}>
                             <button className="btn btn-ghost btn-circle">
-                                <FaShoppingBag /><sup className="text-xs seco">{5}</sup>
+                                <FaShoppingBag /><sup className="text-xs seco">{ }</sup>
                             </button>
-                        </Link> :
-                        user && <h3 className="loading loading-spinner loading-sm"></h3>
+                        </Link>
+                    }
+                    {role === 'restaurant' &&
+                        <Link to={'/received-orders'}>
+                            <button className="btn btn-ghost btn-circle">
+                                <FaGlobeAmericas /><sup className="text-xs seco">{ }</sup>
+                            </button>
+                        </Link>
                     }
                 </div>
             </div>
