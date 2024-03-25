@@ -27,6 +27,7 @@ import SingleTask from "./pages/rider/SingleTask";
 import AdminProfile from "./pages/admin/AdminProfile";
 import ManageUsers from "./pages/admin/ManageUsers";
 import ManageRestaurants from "./pages/admin/ManageRestaurants";
+import ViewRestaurant from "./pages/ViewRestaurant";
 
 
 
@@ -50,7 +51,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/restaurant/:id',
-        element: <HomePage/>,
+        element: <ViewRestaurant/>,
       },
       
 
