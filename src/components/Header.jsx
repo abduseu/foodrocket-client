@@ -77,6 +77,13 @@ const Header = () => {
                             </button>
                         </Link>
                     }
+                    {role === 'rider' &&
+                        <Link to={'/task'}>
+                            <button className="btn btn-ghost btn-circle">
+                                <FaGlobeAmericas /><sup className="text-xs seco">{ }</sup>
+                            </button>
+                        </Link>
+                    }
                 </div>
             </div>
             <div className="pb-4">
