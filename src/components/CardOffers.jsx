@@ -9,7 +9,7 @@ const CardOffers = ({ obj }) => {
                 <div className="bg-prim flex flex-col justify-end items-center p-5 h-full rounded-lg w-80">
                     <div className="-ml-11 text-left w-full">
                         {deal > 0 &&
-                            <div className="bg-prim2 prim font-semibold text-sm text-center uppercase w-20 p-0.5 rounded-r-sm">
+                            <div className="bg-white prim font-semibold text-sm text-center uppercase w-20 p-0.5 rounded-r-sm">
                                 <h4>{deal}% off</h4>
                             </div>
                         }
