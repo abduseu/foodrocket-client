@@ -5,13 +5,13 @@ import Footer from "./Footer";
 const Root = () => {
     return (
         <div>
-            <header className="bg-prim">
+            {/* <header className="bg-prim">
                 <div className="xl:container mx-auto">
-                    <div className="mx-5 mb-6">
+                    <div className="mx-5 mb-6"> */}
                         <Header></Header>
-                    </div>
+                    {/* </div>
                 </div>
-            </header>
+            </header> */}
             <main className="xl:container mx-auto">
                 <div className="mx-5 my-6">
                     <Outlet></Outlet>
