@@ -1,15 +1,19 @@
 import { Link } from "react-router-dom";
 
-const CardRestaurant = ( {obj} ) => {
-    const { _id, name, deal } = obj
+const CardRestaurant = ({ obj }) => {
+    const { _id, image, name, deal } = obj
     return (
         <Link to={`/restaurant/${_id}`}>
-            <div className="p-5 bg-gray rounded-lg flex flex-col justify-center items-center">
-                <img src="https://i.ibb.co/SVLQTMc/plate-04.png" />
-                <h3 className="font-bold text-2xl">{name}</h3>
-                <div>
-                    <span className="font-semibold seco uppercase">{deal}% off</span>
+            <div className="p-5 bg-gray rounded-lg flex flex-col justify-between items-center h-full">
+                <div className=" -ml-10 text-left w-full">
+                    {deal > 10 &&
+                        <div className="bg-green-100 prim font-semibold text-center uppercase p-1 w-24 rounded-r-sm">
+                            <h4>{deal}% off</h4>
+                        </div>
+                    }
                 </div>
+                <img src={image} />
+                <h3 className="font-bold text-2xl">{name}</h3>
             </div>
         </Link>
     );
