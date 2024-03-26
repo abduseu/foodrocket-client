@@ -16,13 +16,19 @@ body{
 Color code:
 navy black  : #0F298B #000
 red  black  : #DD0A37 #000
-geen orange : #036351 #FF6200
+
+darkgreen orange : #036351 #FF6200
+
+green orange   : #1BAE76 #FF6200
+green2 orange2 : #DCFCE7 #FEE2E2
 */
 
 :root {
-    --primary-color: #1BAE76;
-    --secondary-color: #FF6200;
     --text-color: #fff;
+    --primary-color: #1BAE76;
+    --primary-color2: #DCFCE7;
+    --secondary-color: #FF6200;
+    --secondary-color2: #FEE2E2;
   }
   
   body{
@@ -42,19 +48,26 @@ geen orange : #036351 #FF6200
     color: var(--text-color);
   }
   
-  .bg-prim{
-    background-color: var(--primary-color);
-  }
   .prim{
     color: var(--primary-color);
   }
-
-  .bg-seco{
-    background-color: var(--secondary-color);
+  .bg-prim{
+    background-color: var(--primary-color);
   }
+  .bg-prim2{
+    background-color: var(--primary-color2);
+  }  
+
   .seco{
     color: var(--secondary-color);
   }
+  .bg-seco{
+    background-color: var(--secondary-color);
+  }
+  .bg-seco2{
+    background-color: var(--secondary-color2);
+  }
+  
   
   .bg-gray{
     background-color: #f2f2f7;

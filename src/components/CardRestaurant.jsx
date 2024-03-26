@@ -7,7 +7,7 @@ const CardRestaurant = ({ obj }) => {
             <div className="p-5 bg-gray rounded-lg flex flex-col justify-between items-center h-full">
                 <div className=" -ml-10 text-left w-full">
                     {deal > 10 &&
-                        <div className="bg-green-100 prim font-semibold text-center uppercase p-1 w-24 rounded-r-sm">
+                        <div className="bg-prim2 prim font-semibold text-center uppercase p-1 w-24 rounded-r-sm">
                             <h4>{deal}% off</h4>
                         </div>
                     }
