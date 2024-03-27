@@ -16,6 +16,7 @@ const RestaurantDrawer = () => {
                         {/* Sidebar content here */}
                         <li className="font-semibold text-2xl mb-4 uppercase">Dashboard</li>
                         <li><Link to={'/restaurant'}>Restaurant Profile</Link></li>
+                        <li><Link to={'/menu/add'}>Add Menu</Link></li>
                         <li><Link to={'/menu'}>Manage Menu</Link></li>
                         <li><Link to={'/received-orders'}>Received Orders</Link></li>
                     </ul>
