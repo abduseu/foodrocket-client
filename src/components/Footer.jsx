@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
     return (
         <div className="footer justify-between py-10">
-            <aside className="flex flex-col justify-center h-full">
+            <aside className="prim flex flex-col justify-center h-full">
                 <h2 className="text-2xl font-bold flex items-center gap-2"><IoFastFood/> FoodRocket</h2>
                 <p>Online Food Delivery Platform</p>
             </aside>
