@@ -5,7 +5,7 @@ const Offers = ({ obj }) => {
 
     return (
         <div className="bg-[#2F2D2D] text-white p-8 rounded-lg my-8">
-            <h1 className="mb-4 prim text-2xl font-bold">Top Deals</h1>
+            <h1 className="mb-4 text-2xl font-bold">Top Deals</h1>
             <Marquee>
                 <div className="text gap-5 flex w-full mx-2">
                     {
