@@ -5,7 +5,7 @@ const CardOffers = ({ obj }) => {
 
     return (
         <div>
-            <Link to={`/restaurant/${_id}`}>
+            <Link to={`/restaurants/${_id}`}>
                 <div className="bg-prim flex flex-col justify-end items-center p-5 h-full rounded-lg w-80">
                     <div className="-ml-11 text-left w-full">
                         {deal > 0 &&
