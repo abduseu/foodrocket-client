@@ -56,7 +56,7 @@ const router = createBrowserRouter([
         element: <SignupPage/>,
       },
       {
-        path: '/restaurant/:id',
+        path: '/restaurants/:id',
         element: <ViewRestaurant/>,
       },
       

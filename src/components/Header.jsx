@@ -90,7 +90,7 @@ const Header = () => {
                     </div>
                 </div>
             </div>
-            {(pathname == '/' || pathname.startsWith('/restaurant') || pathname.startsWith('/service')) &&
+            {(pathname == '/' || pathname.startsWith('/restaurants') || pathname.startsWith('/service')) &&
                 <div className="bg-black text">
                     <div className="xl:container mx-auto">
                         <div className="mx-5 mb-6 flex justify-between items-center">

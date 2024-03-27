@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const CardRestaurant = ({ obj }) => {
     const { _id, image, name, deal, hours } = obj
     return (
-        <Link to={`/restaurant/${_id}`}>
+        <Link to={`/restaurants/${_id}`}>
             <div className="p-5 border rounded-lg flex flex-col justify-between items-center h-full">
                 <div className="-ml-10 text-left w-full">
                     {deal > 0 &&
