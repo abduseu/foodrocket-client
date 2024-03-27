@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { FaGlobeAmericas, FaRegNewspaper, FaShoppingBag } from "react-icons/fa";
 import { IoFastFood, IoLogInOutline } from "react-icons/io5";
 import useAuth from "../hooks/useAuth";
@@ -7,6 +7,7 @@ import useAxios from "../hooks/useAxios";
 const Header = () => {
     const { user, logOut } = useAuth()
     const { role } = useAxios(`/users/${user?.email}`)
+    const { pathname } = useLocation()
 
     const handleSignout = () => {
         logOut()
@@ -89,24 +90,26 @@ const Header = () => {
                     </div>
                 </div>
             </div>
-            <div className="bg-black text">
-                <div className="xl:container mx-auto">
-                    <div className="mx-5 mb-6 flex justify-between items-center">
-                        <ul className="flex gap-8 p-4">
-                            <li>Restaurant</li>
-                            <li>Service</li>
-                        </ul>
-                        <div>
-                            <form className="bg-white flex rounded-lg">
-                                <button className="btn btn-ghost btn-circle">
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="black"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
-                                </button>
-                                <input type="text" name="search" placeholder="Search Restaurant" className="focus:outline-none rounded-lg w-full" />
-                            </form>
+            {(pathname == '/' || pathname.startsWith('/restaurant') || pathname.startsWith('/service')) &&
+                <div className="bg-black text">
+                    <div className="xl:container mx-auto">
+                        <div className="mx-5 mb-6 flex justify-between items-center">
+                            <ul className="flex gap-8 p-4">
+                                <NavLink to={'/'}><li>Restaurant</li></NavLink>
+                                <NavLink to={'/service'}><li>Service</li></NavLink>
+                            </ul>
+                            <div>
+                                <form className="bg-white flex rounded-lg">
+                                    <button className="btn btn-ghost btn-circle">
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="black"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                                    </button>
+                                    <input type="text" name="search" placeholder="Search Restaurant" className="focus:outline-none rounded-lg w-full" />
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            }
         </header>
     );
 };

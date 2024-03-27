@@ -29,6 +29,7 @@ import ManageUsers from "./pages/admin/ManageUsers";
 import ManageRestaurants from "./pages/admin/ManageRestaurants";
 import ViewRestaurant from "./pages/ViewRestaurant";
 import Cart from "./pages/Cart";
+import ServicePage from "./pages/ServicePage";
 
 
 
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <HomePage/>,
+      },
+      {
+        path: '/service',
+        element: <ServicePage/>,
       },
       {
         path: '/login',
