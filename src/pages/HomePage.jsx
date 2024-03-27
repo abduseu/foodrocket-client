@@ -1,5 +1,5 @@
 import CardRestaurant from "../components/CardRestaurant";
-import Offers2 from "../components/Offers2";
+import Offers from "../components/Offers";
 import useAxios from "../hooks/useAxios";
 
 const HomePage = () => {
@@ -7,7 +7,7 @@ const HomePage = () => {
 
     return (
         <div>
-            <Offers2 obj={restaurants} />
+            <Offers obj={restaurants} />
             <div className="grid md:grid-cols-4 gap-4">
                 {
                     restaurants.map(x => <CardRestaurant key={x._id} obj={x} />)

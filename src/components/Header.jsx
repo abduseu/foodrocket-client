@@ -20,16 +20,13 @@ const Header = () => {
 
     //Navlink
     const links = <>
-        <li><Link to={'/'} className="font-bold text-xl flex items-center gap-2"><IoFastFood /> FoodRocket</Link></li>
-        <hr />
         <li><Link to="/login"><IoLogInOutline />Login to your account!</Link></li>
         <li><Link to="/signup"><FaRegNewspaper />Create an Account</Link></li>
     </>
     const linksPrivate = <>
-        <li><Link to={'/'} className="font-bold text-xl flex items-center gap-2"><IoFastFood /> FoodRocket</Link></li>
         <li className="whitespace-nowrap flex-nowrap flex-row items-center py-2">
-            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                <div className="w-10 rounded-full">
+            <label tabIndex={0} className="avatar">
+                <div className="rounded-full">
                     <img src={user?.photoURL} />
                 </div>
             </label>
@@ -46,23 +43,23 @@ const Header = () => {
     </>
 
     return (
-        <header className="bg-prim">
+        <header className="bg-prim text">
             <div className="xl:container mx-auto">
                 <div className="mx-5">
-                    <div className="py-4">
-                        <div className="navbar px-0 text">
+                    <div>
+                        <div className="navbar px-0">
                             <div className="navbar-start">
                                 <div className="dropdown">
                                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
                                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
                                     </div>
-                                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-gray text-black rounded-lg min-w-60">
+                                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[2] p-2 shadow bg-prim2 text-black rounded-lg min-w-60">
                                         {user ? linksPrivate : links}
                                     </ul>
                                 </div>
                             </div>
                             <div className="navbar-center">
-                                <Link to={'/'} className="font-bold text-xl flex items-center gap-2"><IoFastFood /> FoodRocket</Link>
+                                <Link to={'/'} className="font-bold text-2xl flex items-center gap-2"><IoFastFood /> FoodRocket</Link>
                             </div>
                             <div className="navbar-end">
                                 {user && role === undefined && <h3 className="loading loading-spinner loading-sm"></h3>}
@@ -92,7 +89,7 @@ const Header = () => {
                     </div>
                 </div>
             </div>
-            <div className="bg-gray">
+            <div className="bg-black text">
                 <div className="xl:container mx-auto">
                     <div className="mx-5 mb-6 flex justify-between items-center">
                         <ul className="flex gap-8 p-4">
