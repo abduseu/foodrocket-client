@@ -26,14 +26,13 @@ const Menu = () => {
                     <div className="text-center p-6 w-full">
                         <h3 className="text-2xl font-semibold mb-6 uppercase">Manage Menu</h3>
                         <div>
-                            {
+                            { menu == '' ? <span className="loading loading-ring loading-lg"></span> :
+                            
                                 menu.map((x, index) =>
                                     <div key={x._id} className="flex justify-between items-center my-4 md:px-10 mx-auto">
                                         <div className="md:flex items-center w-2/3">
                                             <div className="text-left">
-                                                <Link to={`/details/${x._id}`}>
-                                                    <h3 className="font-semibold text-sm">{index + 1}. {x.food_name}</h3>
-                                                </Link>
+                                                <h3 className="font-semibold text-sm">{index + 1}. {x.food_name}</h3>
                                             </div>
                                         </div>
                                         <div className="flex justify-end items-center gap-2 font-semibold text-sm">
