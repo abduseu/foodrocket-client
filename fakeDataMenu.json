@@ -41,3 +41,169 @@
     }
   ]
   
+  [
+    {
+      "restaurantId": "660112203823ea58c90b0f5f",
+      "food_name": "Butter Chicken",
+      "ingredients": "Chicken, Butter, Tomato, Cream, Spices",
+      "food_image": "https://i.ibb.co/R7mjqrs/plate-03.png",
+      "food_category": "Main Course",
+      "price": 13.99
+    },
+    {
+      "restaurantId": "660112203823ea58c90b0f5f",
+      "food_name": "Vegetable Biryani",
+      "ingredients": "Basmati Rice, Mixed Vegetables, Spices, Saffron",
+      "food_image": "https://i.ibb.co/SVLQTMc/plate-04.png",
+      "food_category": "Main Course",
+      "price": 11.99
+    },
+    {
+      "restaurantId": "660112203823ea58c90b0f5f",
+      "food_name": "Palak Paneer",
+      "ingredients": "Spinach, Paneer, Onion, Tomato, Cream, Spices",
+      "food_image": "https://i.ibb.co/tz94hbD/plate-01.png",
+      "food_category": "Vegetarian",
+      "price": 10.99
+    },
+    {
+      "restaurantId": "660112203823ea58c90b0f5f",
+      "food_name": "Naan Bread",
+      "ingredients": "Flour, Yogurt, Yeast, Butter",
+      "food_image": "https://i.ibb.co/0cqfCt6/plate-02.png",
+      "food_category": "Bread",
+      "price": 2.99
+    },
+    {
+      "restaurantId": "660112203823ea58c90b0f5f",
+      "food_name": "Mango Lassi",
+      "ingredients": "Yogurt, Mango, Sugar, Cardamom",
+      "food_image": "https://i.ibb.co/R7mjqrs/plate-03.png",
+      "food_category": "Beverage",
+      "price": 4.99
+    }
+  ]
+
+  [
+    {
+      "restaurantId": "660112203823ea58c90b0f60",
+      "food_name": "Chicken Tikka Masala",
+      "ingredients": "Chicken, Yogurt, Tomato, Cream, Spices",
+      "food_image": "https://i.ibb.co/0cqfCt6/plate-02.png",
+      "food_category": "Curry",
+      "price": 14.99
+    },
+    {
+      "restaurantId": "660112203823ea58c90b0f60",
+      "food_name": "Paneer Tikka Masala",
+      "ingredients": "Paneer, Yogurt, Tomato, Cream, Spices",
+      "food_image": "https://i.ibb.co/tz94hbD/plate-01.png",
+      "food_category": "Curry",
+      "price": 12.99
+    },
+    {
+      "restaurantId": "660112203823ea58c90b0f60",
+      "food_name": "Vegetable Korma",
+      "ingredients": "Mixed Vegetables, Coconut milk, Cashews, Spices",
+      "food_image": "https://i.ibb.co/SVLQTMc/plate-04.png",
+      "food_category": "Curry",
+      "price": 11.99
+    },
+    {
+      "restaurantId": "660112203823ea58c90b0f60",
+      "food_name": "Lamb Rogan Josh",
+      "ingredients": "Lamb, Yogurt, Tomato, Spices",
+      "food_image": "https://i.ibb.co/R7mjqrs/plate-03.png",
+      "food_category": "Curry",
+      "price": 15.99
+    },
+    {
+      "restaurantId": "660112203823ea58c90b0f60",
+      "food_name": "Chana Masala",
+      "ingredients": "Chickpeas, Tomato, Onion, Spices",
+      "food_image": "https://i.ibb.co/0cqfCt6/plate-02.png",
+      "food_category": "Curry",
+      "price": 10.99
+    }
+  ]
+
+  [
+    {
+      "restaurantId": "660112203823ea58c90b0f61",
+      "food_name": "Tandoori Chicken",
+      "ingredients": "Chicken, Yogurt, Lemon, Spices",
+      "food_image": "https://i.ibb.co/R7mjqrs/plate-03.png",
+      "food_category": "Appetizers",
+      "price": 11.99
+    },
+    {
+      "restaurantId": "660112203823ea58c90b0f61",
+      "food_name": "Samosa",
+      "ingredients": "Potatoes, Peas, Spices, Pastry",
+      "food_image": "https://i.ibb.co/SVLQTMc/plate-04.png",
+      "food_category": "Appetizers",
+      "price": 6.99
+    },
+    {
+      "restaurantId": "660112203823ea58c90b0f61",
+      "food_name": "Chicken Biryani",
+      "ingredients": "Basmati Rice, Chicken, Spices",
+      "food_image": "https://i.ibb.co/tz94hbD/plate-01.png",
+      "food_category": "Main Course",
+      "price": 13.99
+    },
+    {
+      "restaurantId": "660112203823ea58c90b0f61",
+      "food_name": "Garlic Naan",
+      "ingredients": "Flour, Garlic, Butter",
+      "food_image": "https://i.ibb.co/0cqfCt6/plate-02.png",
+      "food_category": "Bread",
+      "price": 3.99
+    },
+    {
+      "restaurantId": "660112203823ea58c90b0f61",
+      "food_name": "Mango Lassi",
+      "ingredients": "Yogurt, Mango, Sugar",
+      "food_image": "https://i.ibb.co/R7mjqrs/plate-03.png",
+      "food_category": "Beverages",
+      "price": 4.99
+    }
+  ]
+
+  [
+    {
+      "restaurantId": "660112203823ea58c90b0f62",
+      "food_name": "Mint Chutney",
+      "ingredients": "Mint Leaves, Cilantro, Green Chilies, Lemon Juice, Salt",
+      "food_image": "https://i.ibb.co/R7mjqrs/plate-03.png",
+      "food_category": "Chutneys",
+      "price": 3.99
+    },
+    {
+      "restaurantId": "660112203823ea58c90b0f62",
+      "food_name": "Tamarind Chutney",
+      "ingredients": "Tamarind Pulp, Dates, Jaggery, Cumin, Salt",
+      "food_image": "https://i.ibb.co/SVLQTMc/plate-04.png",
+      "food_category": "Chutneys",
+      "price": 4.99
+    },
+    {
+      "restaurantId": "660112203823ea58c90b0f62",
+      "food_name": "Coconut Chutney",
+      "ingredients": "Coconut, Roasted Chana Dal, Green Chilies, Ginger, Tamarind, Salt",
+      "food_image": "https://i.ibb.co/tz94hbD/plate-01.png",
+      "food_category": "Chutneys",
+      "price": 3.49
+    },
+    {
+      "restaurantId": "660112203823ea58c90b0f62",
+      "food_name": "Tomato Chutney",
+      "ingredients": "Tomatoes, Onion, Garlic, Red Chilies, Tamarind, Salt",
+      "food_image": "https://i.ibb.co/0cqfCt6/plate-02.png",
+      "food_category": "Chutneys",
+      "price": 3.99
+    }
+  ]
+
+  
+  
