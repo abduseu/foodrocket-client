@@ -1,17 +1,19 @@
 import { Link } from "react-router-dom";
 
-const CardMenu = () => {
+const CardMenu = ({ obj }) => {
+    const { food_image, food_name, ingredients, price } = obj
+    console.log(obj)
     return (
         <Link to={`/`}>
             <div className="flex justify-between items-center my-4">
                 <div className="flex items-center">
-                    <img src={'https://i.ibb.co/SVLQTMc/plate-04.png'} className=" w-24" />
+                    <img src={food_image} className=" w-24" />
                     <div>
-                        <h3 className="font-bold text-xl">Grill Chicken</h3>
-                        <p className="text-sm px-2">Chicken, Sauce, Naan</p>
+                        <h3 className="font-bold text-xl">{food_name}</h3>
+                        <p className="text-sm px-2">{ingredients}</p>
                     </div>
                 </div>
-                <h3 className="green font-bold text-xl">${'12'}</h3>
+                <h3 className="prim font-bold text-xl">${price}</h3>
             </div>
         </Link>
     );
