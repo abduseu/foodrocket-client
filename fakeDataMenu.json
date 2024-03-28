@@ -1,42 +1,43 @@
 [
-  {
-    "restaurantId": "restaurant1@gmail.com",
-    "food_name": "Salmon Fillet",
-    "ingredients": "Salmon fillet, Lemon, Garlic",
-    "food_image": "https://i.ibb.co/R7mjqrs/plate-03.png",
-    "food_category": "Entrees",
-    "price": 16.99
-  },
-  {
-    "restaurantId": "restaurant1@gmail.com",
-    "food_name": "Vegetarian Pasta",
-    "ingredients": "Penne pasta, Bell peppers, Zucchini, Tomato sauce",
-    "food_image": "https://i.ibb.co/SVLQTMc/plate-04.png",
-    "food_category": "Entrees",
-    "price": 12.99
-  },
-  {
-    "restaurantId": "restaurant1@gmail.com",
-    "food_name": "Grilled Chicken Salad",
-    "ingredients": "Grilled chicken breast, Mixed greens, Cherry tomatoes, Balsamic vinaigrette",
-    "food_image": "https://i.ibb.co/tz94hbD/plate-01.png",
-    "food_category": "Salads",
-    "price": 11.99
-  },
-  {
-    "restaurantId": "restaurant1@gmail.com",
-    "food_name": "Classic Cheeseburger",
-    "ingredients": "Beef patty, Cheddar cheese, Lettuce, Tomato, Brioche bun",
-    "food_image": "https://i.ibb.co/0cqfCt6/plate-02.png",
-    "food_category": "Burgers",
-    "price": 9.99
-  },
-  {
-    "restaurantId": "restaurant1@gmail.com",
-    "food_name": "Margherita Pizza",
-    "ingredients": "Pizza dough, Mozzarella cheese, Fresh basil, Tomato sauce",
-    "food_image": "https://i.ibb.co/R7mjqrs/plate-03.png",
-    "food_category": "Pizzas",
-    "price": 14.99
-  }
-]
+    {
+      "restaurantId": "660112203823ea58c90b0f5e",
+      "food_name": "Salmon Fillet",
+      "ingredients": "Salmon fillet, Lemon, Garlic",
+      "food_image": "https://i.ibb.co/R7mjqrs/plate-03.png",
+      "food_category": "Entrees",
+      "price": 16.99
+    },
+    {
+      "restaurantId": "660112203823ea58c90b0f5e",
+      "food_name": "Vegetarian Pasta",
+      "ingredients": "Penne pasta, Bell peppers, Zucchini, Tomato sauce",
+      "food_image": "https://i.ibb.co/SVLQTMc/plate-04.png",
+      "food_category": "Entrees",
+      "price": 12.99
+    },
+    {
+      "restaurantId": "660112203823ea58c90b0f5e",
+      "food_name": "Grilled Chicken Salad",
+      "ingredients": "Grilled chicken breast, Mixed greens, Cherry tomatoes, Balsamic vinaigrette",
+      "food_image": "https://i.ibb.co/tz94hbD/plate-01.png",
+      "food_category": "Salads",
+      "price": 11.99
+    },
+    {
+      "restaurantId": "660112203823ea58c90b0f5e",
+      "food_name": "Classic Cheeseburger",
+      "ingredients": "Beef patty, Cheddar cheese, Lettuce, Tomato, Brioche bun",
+      "food_image": "https://i.ibb.co/0cqfCt6/plate-02.png",
+      "food_category": "Burgers",
+      "price": 9.99
+    },
+    {
+      "restaurantId": "660112203823ea58c90b0f5e",
+      "food_name": "Margherita Pizza",
+      "ingredients": "Pizza dough, Mozzarella cheese, Fresh basil, Tomato sauce",
+      "food_image": "https://i.ibb.co/R7mjqrs/plate-03.png",
+      "food_category": "Pizzas",
+      "price": 14.99
+    }
+  ]
+  

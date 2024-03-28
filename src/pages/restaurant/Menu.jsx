@@ -3,7 +3,7 @@ import RestaurantDrawer from "./RestaurantDrawer";
 import useAuth from "../../hooks/useAuth";
 import { useState } from "react";
 import { useEffect } from "react";
-import { axiosBase } from "../../hooks/useAxios";
+import useAxios, { axiosBase } from "../../hooks/useAxios";
 import Swal from "sweetalert2";
 
 const Menu = () => {
@@ -11,19 +11,18 @@ const Menu = () => {
     const [menu, setMenu] = useState([])
 
     //fetch menu
-    const filterEmail = user.email;
+    const { restaurantId } = useAxios(`/users/${user.email}`)
     useEffect(() => {
-        axiosBase(`/menu-query?email=${filterEmail}`)
+        axiosBase(`/menu-restaurantId/${restaurantId}`)
             .then(res => {
                 setMenu(res.data);
             });
-    }, [filterEmail]);
+    }, [restaurantId]);
 
     //Delete item
     const handleDeleteItem = (id) => {
         axiosBase.delete(`/menu/${id}`)
             .then(res => {
-                console.log(res.data);
                 if (res.data.deletedCount > 0) {
                     Swal.fire(
                         'Deleted!',
