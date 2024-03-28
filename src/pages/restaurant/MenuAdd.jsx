@@ -1,10 +1,11 @@
 import Swal from "sweetalert2";
-import { axiosBase } from "../../hooks/useAxios";
+import useAxios, { axiosBase } from "../../hooks/useAxios";
 import RestaurantDrawer from "./RestaurantDrawer";
 import useAuth from "../../hooks/useAuth";
 
 const MenuAdd = () => {
     const {user} = useAuth()
+    const { restaurantId } = useAxios(`/users/${user.email}`)
 
     const handleAddItem = e => {
         e.preventDefault()
@@ -14,7 +15,7 @@ const MenuAdd = () => {
         const ingredients = form.ingredients.value
         const price = form.price.value
         const food_image = form.image.value
-        const restaurantId = user.email
+        // const restaurantId = user.email
         
         const item = { restaurantId, food_name, food_category, ingredients, price, food_image }
 
