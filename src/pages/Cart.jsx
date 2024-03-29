@@ -19,6 +19,9 @@ const Cart = () => {
             });
     }
 
+    // Calculate total price
+    const totalPrice = cart.reduce((prev, current) => prev + parseFloat(current.price), 0);
+
     return (
         <div>
             <div className="border rounded-lg">
@@ -42,6 +45,9 @@ const Cart = () => {
                                 </div>
                             )
                         }
+                        <div className="text-center">
+                            <h3 className="font-bold text-xl">Total: ${totalPrice.toFixed(2)}</h3>
+                        </div>
                     </div>
                 </div>
             </div>
