@@ -1,6 +1,38 @@
+import Swal from "sweetalert2";
+import useAuth from "../hooks/useAuth";
+import { axiosBase } from "../hooks/useAxios";
+import useCart from "../hooks/useCart";
+
 const CardMenu = ({ obj }) => {
-    const { food_image, food_name, ingredients, price } = obj
-    
+    const { _id, restaurantId, food_image, food_name, ingredients, price } = obj
+    const { user } = useAuth();
+    const [, refetch] = useCart();
+
+
+    const handleAddCart = () => {
+
+        const item = {
+            userId: user.email,
+            restaurantId: restaurantId,
+            itemId: _id,
+            item_name: food_name,
+            quantity: 1,
+            price
+        }
+
+        axiosBase.post('/cart', item)
+            .then(res => {
+                if (res.data.insertedId) {
+                    refetch()
+                    Swal.fire(
+                        'Item Added!',
+                        'Item added to cart!',
+                        'success'
+                    )
+                }
+            })
+    }
+
     return (
         <div className="flex justify-between items-center my-4">
             <div className="md:flex items-center">
@@ -12,7 +44,7 @@ const CardMenu = ({ obj }) => {
             </div>
             <div className="flex items-center gap-2">
                 <h3 className="prim font-bold text-xl">${price}</h3>
-                <button className="btn btn-sm btn-circle btn-success text-xl text hover:bg-black">+</button>
+                <button onClick={handleAddCart} className="btn btn-sm btn-circle btn-success text-xl text hover:bg-black">+</button>
             </div>
         </div>
     );
