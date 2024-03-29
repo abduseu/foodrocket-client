@@ -1,13 +1,15 @@
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { FaGlobeAmericas, FaRegNewspaper, FaShoppingBag } from "react-icons/fa";
+import { FaGlobeAmericas, FaRegHeart, FaRegNewspaper, FaShoppingBag } from "react-icons/fa";
 import { IoFastFood, IoLogInOutline } from "react-icons/io5";
 import useAuth from "../hooks/useAuth";
 import useAxios from "../hooks/useAxios";
+import useCart from "../hooks/useCart";
 
 const Header = () => {
     const { user, logOut } = useAuth()
     const { role } = useAxios(`/users/${user?.email}`)
     const { pathname } = useLocation()
+    const [cart] = useCart()
 
     const handleSignout = () => {
         logOut()
@@ -65,11 +67,18 @@ const Header = () => {
                             <div className="navbar-end">
                                 {user && role === undefined && <h3 className="loading loading-spinner loading-sm"></h3>}
                                 {role === 'user' &&
-                                    <Link to={'/cart'}>
-                                        <button className="btn btn-ghost btn-circle">
-                                            <FaShoppingBag /><sup className="text-xs seco">{ }</sup>
-                                        </button>
-                                    </Link>
+                                    <>
+                                        <Link to={'/favorite'}>
+                                            <button className="btn btn-ghost btn-circle">
+                                                <FaRegHeart /><sup className="text-xs">{ }</sup>
+                                            </button>
+                                        </Link>
+                                        <Link to={'/cart'}>
+                                            <button className="btn btn-ghost btn-circle">
+                                                <FaShoppingBag /><sup className="text-xs">{cart.length}</sup>
+                                            </button>
+                                        </Link>
+                                    </>
                                 }
                                 {role === 'restaurant' &&
                                     <Link to={'/received-orders'}>
