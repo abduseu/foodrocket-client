@@ -4,12 +4,14 @@ import { IoFastFood, IoLogInOutline } from "react-icons/io5";
 import useAuth from "../hooks/useAuth";
 import useAxios from "../hooks/useAxios";
 import useCart from "../hooks/useCart";
+import useFavorite from "../hooks/useFavorite";
 
 const Header = () => {
     const { user, logOut } = useAuth()
     const { role } = useAxios(`/users/${user?.email}`)
     const { pathname } = useLocation()
     const [cart] = useCart()
+    const [favorite] = useFavorite()
 
     const handleSignout = () => {
         logOut()
@@ -70,7 +72,7 @@ const Header = () => {
                                     <>
                                         <Link to={'/favorite'}>
                                             <button className="btn btn-ghost btn-circle">
-                                                <FaRegHeart /><sup className="text-xs">{ }</sup>
+                                                <FaRegHeart /><sup className="text-xs">{favorite.length}</sup>
                                             </button>
                                         </Link>
                                         <Link to={'/cart'}>
