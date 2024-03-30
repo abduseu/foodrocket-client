@@ -1,20 +1,49 @@
+import { useState } from "react";
 import useAuth from "../../hooks/useAuth";
-import useAxios from "../../hooks/useAxios";
+import useAxios, { axiosBase } from "../../hooks/useAxios";
 import RestaurantDrawer from "./RestaurantDrawer";
+import { useEffect } from "react";
+import Swal from "sweetalert2";
 
 const ReceivedOrders = () => {
     const { user } = useAuth()
     const restaurantId = useAxios(`/restaurant-email?email=${user.email}`)
-    const orders = useAxios(`/received-orders?id=${restaurantId._id}`)
+    const [orders, setOrders] = useState([])
+
+    useEffect(() => {
+        axiosBase(`/received-orders?id=${restaurantId._id}`)
+            .then(res => { setOrders(res.data) })
+    }, [restaurantId._id])
 
 
-    const handleMarkAsComplete = () => {
-
-
+    const handleCompleteOrder = (id) => {
+        axiosBase.put(`/orders/${id}`, { status: "completed" })
+            .then(res => {
+                if (res.data.modifiedCount > 0) {
+                    Swal.fire(
+                        'Order Completed!',
+                        'Order has been completed!',
+                        'success'
+                    )
+                    axiosBase(`/received-orders?id=${restaurantId._id}`)
+                        .then(res => { setOrders(res.data) })
+                }
+            })
     }
 
-    const handleDeleteOrder = () => {
-
+    const handleCancelOrder = (id) => {
+        axiosBase.put(`/orders/${id}`, { status: "canceled" })
+            .then(res => {
+                if (res.data.modifiedCount > 0) {
+                    Swal.fire(
+                        'Order Canceled!',
+                        'Order has been canceled!',
+                        'error'
+                    )
+                    axiosBase(`/received-orders?id=${restaurantId._id}`)
+                        .then(res => { setOrders(res.data) })
+                }
+            })
     }
 
     return (
@@ -44,19 +73,17 @@ const ReceivedOrders = () => {
                                             </div>
                                             <div className="flex justify-between">
                                                 {order.status === "pending" && <p className="capitalize red">{order.status}</p>}
+                                                {order.status === "canceled" && <p className="capitalize red">{order.status}</p>}
                                                 {order.status === "completed" && <p className="capitalize green">{order.status}</p>}
-                                                
+
                                                 <p className="font-bold text-right">Total: <span>${order.totalPrice}</span></p>
                                             </div>
-                                            {order.status === "pending" ? (
-                                                <div>
-                                                    <button className="btn btn-success bg-prim text-white block mx-auto" onClick={() => handleMarkAsComplete(order._id)}>Mark as complete</button>
+                                            {order.status === "pending" &&
+                                                <div className="flex justify-center gap-4">
+                                                    <button className="btn btn-success bg-green text-white" onClick={() => handleCompleteOrder(order._id)}>Complete</button>
+                                                    <button className="btn btn-error bg-red text-white" onClick={() => handleCancelOrder(order._id)}>Cancel</button>
                                                 </div>
-                                            ) : (
-                                                <div>
-                                                    <button className="btn btn-error bg-red-600 text-white block mx-auto" onClick={() => handleDeleteOrder(order._id)}>Delete</button>
-                                                </div>
-                                            )}
+                                            }
                                         </div>
                                     </div>
                                 </div>
