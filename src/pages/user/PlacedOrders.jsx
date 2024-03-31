@@ -24,6 +24,7 @@ const PlacedOrders = () => {
                                             </div>
                                         </div>
                                         <div className="grid grid-flow-col items-center gap-4 text-right">
+                                            <h3 className="w-20 text-center capitalize">{x.status}</h3>
                                             <h3 className="prim font-semibold w-20">${x.totalPrice}</h3>
                                         </div>
                                     </div>
