@@ -3,7 +3,6 @@ import useAxios, { axiosBase } from "../hooks/useAxios";
 import CardMenu from "../components/CardMenu";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 import useAuth from "../hooks/useAuth";
-import Swal from "sweetalert2";
 import useFavorite from "../hooks/useFavorite";
 
 const ViewRestaurant = () => {
@@ -14,26 +13,34 @@ const ViewRestaurant = () => {
     const { user } = useAuth()
     const [favorite, refetch] = useFavorite()
 
-    console.log(favorite)
 
-    const handleAddFavorite = (id) => {
+    const handleToggleFavorite = (id) => {
         const fav = {
             userId: user.email,
             restaurantId: id,
             restaurantName: restaurant.name,
         }
 
-        axiosBase.post('/favorite', fav)
-            .then(res => {
-                if (res.data.insertedId) {
-                    refetch()
-                    Swal.fire(
-                        'Added to Favorite!',
-                        'Restaurant added to favorite!',
-                        'success'
-                    )
-                }
-            })
+        if (!favorite[0]?.restaurantId) {
+            //add
+            axiosBase.post('/favorite', fav)
+                .then(res => {
+                    if (res.data.insertedId) {
+                        refetch()
+                    }
+                })
+        } else {
+            //delete
+            axiosBase.delete(`/favorite/${id}`)
+                .then(res => {
+                    if (res.data.deletedCount > 0) {
+                        refetch()
+                    }
+                });
+        }
+
+
+
     }
 
     return (
@@ -43,7 +50,7 @@ const ViewRestaurant = () => {
                     <h2 className="text-xl md:text-3xl font-bold uppercase">{restaurant.name}</h2>
                     <small>{restaurant.hours}</small>
                     <p>{restaurant.email}</p>
-                    <button onClick={() => handleAddFavorite(id)} className="btn btn-sm"><FaRegHeart /><FaHeart />Add to Favorites</button>
+                    <button onClick={() => handleToggleFavorite(id)} className="btn btn-sm">{favorite[0]?.restaurantId ? <FaHeart /> : <FaRegHeart />}Add to Favorites</button>
                 </div>
                 <div className="lg:flex">
                     <div className="p-5 w-full space-y-12">
