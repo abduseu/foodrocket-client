@@ -16,13 +16,13 @@ const ReceivedOrders = () => {
     }, [restaurantId._id])
 
 
-    const handleCompleteOrder = (id) => {
-        axiosBase.put(`/orders/${id}`, { status: "completed" })
+    const handleAcceptOrder = (id) => {
+        axiosBase.put(`/orders/${id}`, { status: "accepted" })
             .then(res => {
                 if (res.data.modifiedCount > 0) {
                     Swal.fire(
-                        'Order Completed!',
-                        'Order has been completed!',
+                        'Order Accepted!',
+                        'Order has been Accepted!',
                         'success'
                     )
                     axiosBase(`/received-orders?id=${restaurantId._id}`)
@@ -72,15 +72,16 @@ const ReceivedOrders = () => {
                                                 ))}
                                             </div>
                                             <div className="flex justify-between">
-                                                {order.status === "pending" && <p className="capitalize red">{order.status}</p>}
+                                                {order.status === "pending" && <p className="capitalize seco">{order.status}</p>}
                                                 {order.status === "canceled" && <p className="capitalize red">{order.status}</p>}
+                                                {order.status === "accepted" && <p className="capitalize green">{order.status}</p>}
                                                 {order.status === "completed" && <p className="capitalize green">{order.status}</p>}
 
                                                 <p className="font-bold text-right">Total: <span>${order.totalPrice}</span></p>
                                             </div>
                                             {order.status === "pending" &&
                                                 <div className="flex justify-center gap-4">
-                                                    <button className="btn btn-success bg-green text-white" onClick={() => handleCompleteOrder(order._id)}>Complete</button>
+                                                    <button className="btn btn-success bg-green text-white" onClick={() => handleAcceptOrder(order._id)}>Accept</button>
                                                     <button className="btn btn-error bg-red text-white" onClick={() => handleCancelOrder(order._id)}>Cancel</button>
                                                 </div>
                                             }
