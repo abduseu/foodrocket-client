@@ -59,7 +59,7 @@ const ReceivedOrders = () => {
                                 <div key={order._id} className="flex justify-between items-center my-4 mx-auto">
                                     <div className="md:flex items-center border rounded-lg p-8 w-full">
                                         <div className="w-full">
-                                            <h3>{order.userId}</h3>
+                                            <h3><span>{order.userAddress} | {order.userId}</span></h3>
                                             <div>
                                                 {order.items.map((x, index) => (
                                                     <li key={x.itemId} className="flex justify-between gap-2">
@@ -75,6 +75,7 @@ const ReceivedOrders = () => {
                                                 {order.status === "pending" && <p className="capitalize seco">{order.status}</p>}
                                                 {order.status === "canceled" && <p className="capitalize red">{order.status}</p>}
                                                 {order.status === "accepted" && <p className="capitalize green">{order.status}</p>}
+                                                {order.status === "picked-up" && <p className="capitalize green">{order.status}</p>}
                                                 {order.status === "completed" && <p className="capitalize green">{order.status}</p>}
 
                                                 <p className="font-bold text-right">Total: <span>${order.totalPrice}</span></p>

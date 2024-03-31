@@ -1,10 +1,11 @@
 import Swal from "sweetalert2";
 import useCart from "../hooks/useCart";
-import { axiosBase } from "../hooks/useAxios";
+import useAxios, { axiosBase } from "../hooks/useAxios";
 import useAuth from "../hooks/useAuth";
 
 const Cart = () => {
     const {user} = useAuth()
+    const userData = useAxios(`/users/${user.email}`)
     const [cart, refetch] = useCart()
     //const {_id, restaurantId, itemId, item_name, quantity, price } = cart
 
@@ -27,6 +28,7 @@ const Cart = () => {
     const handlePurchase = () => {
         const orderData = {
             userId: user.email,
+            userAddress: userData.userAddress,
             restaurantId: cart[0].restaurantId,
             items: cart.map(x => ({
                 itemId: x._id,
