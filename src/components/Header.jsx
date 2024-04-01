@@ -48,7 +48,7 @@ const Header = () => {
     </>
 
     return (
-        <header className="bg-prim text">
+        <header>
             <div className="xl:container mx-auto">
                 <div className="mx-5">
                     <div>
@@ -64,7 +64,7 @@ const Header = () => {
                                 </div>
                             </div>
                             <div className="navbar-center">
-                                <Link to={'/'} className="font-bold text-2xl flex items-center gap-2"><IoFastFood /> FoodRocket</Link>
+                                <Link to={'/'} className="font-bold text-2xl flex items-center gap-2"><span><IoFastFood /></span> FoodRocket</Link>
                             </div>
                             <div className="navbar-end">
                                 {user && role === undefined && <h3 className="loading loading-spinner loading-sm"></h3>}
@@ -72,12 +72,12 @@ const Header = () => {
                                     <>
                                         <Link to={'/favorite'}>
                                             <button className="btn btn-ghost btn-circle">
-                                                <FaRegHeart /><sup className="text-xs">{favorite.length}</sup>
+                                                <FaRegHeart /><sup className="text-xs seco">{favorite.length}</sup>
                                             </button>
                                         </Link>
                                         <Link to={'/cart'}>
                                             <button className="btn btn-ghost btn-circle">
-                                                <FaShoppingBag /><sup className="text-xs">{cart.length}</sup>
+                                                <FaShoppingBag /><sup className="text-xs seco">{cart.length}</sup>
                                             </button>
                                         </Link>
                                     </>
