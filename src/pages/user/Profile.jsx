@@ -9,18 +9,21 @@ const Profile = () => {
 
 
     const handleUpdateAdress = (e) => {
-        const address = e.target.userAddress.value
-        
-        axiosBase.put(`/manage-users/${userData._id}`, {userAddress: address})
-        .then(res => {
-            if (res.data.modifiedCount > 0) {
-                Swal.fire(
-                    'Address Updated!',
-                    'Address has been updated',
-                    'success'
-                )
-            }
-        })
+        const userInfo = {
+            name: e.target.name.value,
+            userAddress: e.target.userAddress.value
+        }
+
+        axiosBase.put(`/manage-users/${userData._id}`, userInfo)
+            .then(res => {
+                if (res.data.modifiedCount > 0) {
+                    Swal.fire(
+                        'Profile Updated!',
+                        'Profile has been updated',
+                        'success'
+                    )
+                }
+            })
     }
 
     return (
@@ -39,7 +42,10 @@ const Profile = () => {
                             <form onSubmit={handleUpdateAdress}>
                                 <div>
                                     <h3>Address: <span>{userData?.userAddress}</span></h3>
-                                    <input type="text" name="userAddress"  placeholder="Update Address" className="input input-sm input-bordered mt-4 w-1/2" />
+                                    <div className="flex justify-center gap-4">
+                                        <input type="text" name="name" placeholder="Update Name" defaultValue={userData?.name} className="input input-sm input-bordered mt-4 w-1/3" />
+                                        <input type="text" name="userAddress" placeholder="Update Address" defaultValue={userData?.userAddress} className="input input-sm input-bordered mt-4 w-1/3" />
+                                    </div>
                                     <button className="btn btn-prim hover:bg-black text-white block mx-auto mt-4">Update</button>
                                 </div>
                             </form>
