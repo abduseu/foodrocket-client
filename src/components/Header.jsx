@@ -107,7 +107,8 @@ const Header = () => {
                     <div className="mx-5 mb-6 flex justify-between items-center">
                         <ul className="flex gap-8 p-4">
                             <NavLink to={'/'}><li>Restaurant</li></NavLink>
-                            <NavLink to={'/service'}><li>Service</li></NavLink>
+                            {/* <NavLink to={'/service'}><li>Service</li></NavLink> */}
+                            <NavLink to={`/${role}`}><li>Dashboard</li></NavLink>
                         </ul>
                         <div>
                             <form className="bg-white flex rounded-lg">
