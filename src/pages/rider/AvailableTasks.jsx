@@ -1,13 +1,13 @@
-import RiderDrawer from "./RiderDrawer";
+import RiderDrawer from './RiderDrawer';
 
-const ReceivedTasks = () => {
+const AvailableTasks = () => {
     return (
         <div className="md:flex border">
             <RiderDrawer></RiderDrawer>
             <div className="bg-cover bg-center w-full">
                 <div className="flex justify-center items-center">
-                <div className="text-center p-6 w-full">
-                        <h3 className="text-2xl font-semibold mb-6 uppercase">Received Task</h3>
+                    <div className="text-center p-6 w-full">
+                        <h3 className="text-2xl font-semibold mb-6 uppercase">Available Task</h3>
                         <div className="text-xl space-y-4">
                             content
                         </div>
@@ -18,4 +18,4 @@ const ReceivedTasks = () => {
     );
 };
 
-export default ReceivedTasks;
+export default AvailableTasks;

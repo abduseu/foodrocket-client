@@ -16,7 +16,8 @@ const RiderDrawer = () => {
                         {/* Sidebar content here */}
                         <li className="font-semibold text-2xl mb-4 uppercase">Dashboard</li>
                         <li><Link to={'/rider'}>Rider Profile</Link></li>
-                        <li><Link to={'/task'}>Received Tasks</Link></li>
+                        <li><Link to={'/task'}>Available Task</Link></li>
+                        <li><Link to={'/received-task'}>Received Task</Link></li>
                     </ul>
 
                 </div>

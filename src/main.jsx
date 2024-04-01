@@ -30,6 +30,7 @@ import ManageRestaurants from "./pages/admin/ManageRestaurants";
 import ViewRestaurant from "./pages/ViewRestaurant";
 import Cart from "./pages/Cart";
 import ServicePage from "./pages/ServicePage";
+import AvailableTasks from "./pages/rider/AvailableTasks";
 
 
 
@@ -108,11 +109,15 @@ const router = createBrowserRouter([
       },
       {
         path: '/task',
-        element: <Private><ReceivedTasks/></Private>,
+        element: <Private><AvailableTasks/></Private>,
       },
       {
         path: '/task/:id',
         element: <Private><SingleTask/></Private>,
+      },
+      {
+        path: '/received-task',
+        element: <Private><ReceivedTasks/></Private>,
       },
 
       // Admin Dashboard
