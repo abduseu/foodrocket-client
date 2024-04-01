@@ -17,7 +17,7 @@ const AdminDrawer = () => {
                         <li className="font-semibold text-2xl mb-4 uppercase">Dashboard</li>
                         <li><Link to={'/admin'}>Admin Profile</Link></li>
                         <li><Link to={'/manage-users'}>Manage Users</Link></li>
-                        <li><Link to={'/manage-restaurants'}>Manage Restaurants</Link></li>
+                        {/* <li><Link to={'/manage-restaurants'}>Manage Restaurants</Link></li> */}
                     </ul>
 
                 </div>
