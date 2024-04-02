@@ -4,7 +4,7 @@ import useAxios, { axiosBase } from "../hooks/useAxios";
 import useAuth from "../hooks/useAuth";
 
 const Cart = () => {
-    const {user} = useAuth()
+    const { user } = useAuth()
     const userData = useAxios(`/users/${user.email}`)
     const [cart, refetch] = useCart()
     //const {_id, restaurantId, itemId, item_name, quantity, price } = cart
@@ -30,6 +30,7 @@ const Cart = () => {
             userId: user.email,
             userAddress: userData.userAddress,
             restaurantId: cart[0].restaurantId,
+            restaurantName: cart[0].restaurantName,
             restaurantAddress: cart[0].restaurantAddress,
             items: cart.map(x => ({
                 itemId: x._id,
@@ -60,6 +61,7 @@ const Cart = () => {
                 <div className="text-center text-xl md:text-3xl font-bold p-5 gap-5 w-full uppercase">
                     Cart
                 </div>
+                <h3 className="text-xl prim font-semibold uppercase text-center">{cart[0]?.restaurantName}</h3>
                 <div className="lg:flex">
                     <div className="p-5 w-full md:w-3/4 mx-auto">
                         {
