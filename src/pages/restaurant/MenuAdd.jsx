@@ -5,7 +5,7 @@ import useAuth from "../../hooks/useAuth";
 
 const MenuAdd = () => {
     const {user} = useAuth()
-    const { restaurantId } = useAxios(`/users/${user.email}`)
+    const restaurantData = useAxios(`/restaurant-email?email=${user.email}`)
 
     const handleAddItem = e => {
         e.preventDefault()
@@ -15,9 +15,11 @@ const MenuAdd = () => {
         const ingredients = form.ingredients.value
         const price = form.price.value
         const food_image = form.image.value
-        // const restaurantId = user.email
+        const restaurantId = restaurantData._id
+        const restaurantName = restaurantData.name
+        const restaurantAddress = restaurantData.address
         
-        const item = { restaurantId, food_name, food_category, ingredients, price, food_image }
+        const item = { restaurantId, restaurantName, restaurantAddress, food_name, food_category, ingredients, price, food_image }
 
         console.log('form:', item)
 
