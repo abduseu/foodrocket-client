@@ -31,6 +31,7 @@ import ViewRestaurant from "./pages/ViewRestaurant";
 import Cart from "./pages/Cart";
 import ServicePage from "./pages/ServicePage";
 import AvailableTasks from "./pages/rider/AvailableTasks";
+import DonateFood from "./pages/restaurant/DonateFood";
 
 
 
@@ -100,6 +101,10 @@ const router = createBrowserRouter([
       {
         path: '/received-orders',
         element: <Private><ReceivedOrders/></Private>,
+      },
+      {
+        path: '/donate-food',
+        element: <Private><DonateFood /></Private>,
       },
 
       // Rider Dashboard
