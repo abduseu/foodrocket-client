@@ -19,7 +19,7 @@ const RiderDrawer = () => {
                         <li><Link to={'/task'}>Available Task</Link></li>
                         <li><Link to={'/received-task'}>Received Task</Link></li>
                         <li><Link to={'/volunteer-task'}>Volunteer Task</Link></li>
-                        <li><Link to={'/volunteer-contributions'}>Volunteer Contributions</Link></li>
+                        <li><Link to={'/my-contributions'}>My Contributions</Link></li>
                     </ul>
 
                 </div>

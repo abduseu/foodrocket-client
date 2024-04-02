@@ -34,7 +34,7 @@ import AvailableTasks from "./pages/rider/AvailableTasks";
 import DonateFood from "./pages/restaurant/DonateFood";
 import PlacedDonations from "./pages/restaurant/PlacedDonations";
 import VolunteerTasks from "./pages/rider/VolunteerTasks";
-import VolunteerContributions from "./pages/rider/VolunteerContributions";
+import MyContributions from "./pages/rider/MyContributions";
 
 
 
@@ -136,8 +136,8 @@ const router = createBrowserRouter([
         element: <Private><VolunteerTasks/></Private>,
       },
       {
-        path: '/volunteer-contributions',
-        element: <Private><VolunteerContributions/></Private>,
+        path: '/my-contributions',
+        element: <Private><MyContributions/></Private>,
       },
 
       // Admin Dashboard

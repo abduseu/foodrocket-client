@@ -24,7 +24,7 @@ const VolunteerTasks = () => {
                         'Task has been Accepted!',
                         'success'
                     )
-                    navigate('/volunteer-contributions')
+                    navigate('/my-contributions')
                 }
             })
     }
