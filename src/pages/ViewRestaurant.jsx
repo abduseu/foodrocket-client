@@ -12,36 +12,35 @@ const ViewRestaurant = () => {
 
     const { user } = useAuth()
     const [favorite, refetch] = useFavorite()
-
+    const isFavorite = favorite.some(x => x.restaurantId === id);
 
     const handleToggleFavorite = (id) => {
         const fav = {
             userId: user.email,
             restaurantId: id,
             restaurantName: restaurant.name,
-        }
+        };
 
-        if (!favorite[0]?.restaurantId) {
-            //add
+        if (!isFavorite) {
+            // Add to favorites
             axiosBase.post('/favorite', fav)
                 .then(res => {
                     if (res.data.insertedId) {
-                        refetch()
+                        refetch();
                     }
-                })
+                });
         } else {
-            //delete
+            // Remove from favorites
             axiosBase.delete(`/favorite/${id}`)
                 .then(res => {
                     if (res.data.deletedCount > 0) {
-                        refetch()
+                        refetch();
                     }
                 });
         }
-
-
-
     }
+
+
 
     return (
         <div>
@@ -50,7 +49,9 @@ const ViewRestaurant = () => {
                     <h2 className="text-xl md:text-3xl font-bold uppercase">{restaurant.name}</h2>
                     <small>{restaurant.hours}</small>
                     <p>{restaurant.email}</p>
-                    <button onClick={() => handleToggleFavorite(id)} className="btn btn-sm">{favorite[0]?.restaurantId ? <FaHeart /> : <FaRegHeart />}Add to Favorites</button>
+                    <button onClick={() => handleToggleFavorite(id)} className="btn btn-sm">
+                        {isFavorite ? <FaHeart /> : <FaRegHeart />}Add to Favorites
+                    </button>
                 </div>
                 <div className="lg:flex">
                     <div className="p-5 w-full space-y-12">
