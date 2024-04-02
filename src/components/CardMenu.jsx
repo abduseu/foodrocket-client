@@ -4,34 +4,40 @@ import { axiosBase } from "../hooks/useAxios";
 import useCart from "../hooks/useCart";
 
 const CardMenu = ({ obj }) => {
-    const { _id, restaurantId, food_image, food_name, ingredients, price } = obj
+    const { _id, restaurantId, food_image, food_name, ingredients, price } = obj;
     const { user } = useAuth();
-    const [, refetch] = useCart();
-
+    const [cart, refetch] = useCart();
 
     const handleAddCart = () => {
+        if (!cart.length || cart.every(x => x.restaurantId === restaurantId)) {
+            const item = {
+                userId: user.email,
+                restaurantId: restaurantId,
+                itemId: _id,
+                item_name: food_name,
+                quantity: 1,
+                price
+            };
 
-        const item = {
-            userId: user.email,
-            restaurantId: restaurantId,
-            itemId: _id,
-            item_name: food_name,
-            quantity: 1,
-            price
+            axiosBase.post('/cart', item)
+                .then(res => {
+                    if (res.data.insertedId) {
+                        refetch();
+                        Swal.fire(
+                            'Item Added!',
+                            'Item added to cart!',
+                            'success'
+                        );
+                    }
+                })
+        } else {
+            Swal.fire(
+                'Empty the Cart!',
+                'Orders from multiple restaurant not allowed',
+                'error'
+            );
         }
-
-        axiosBase.post('/cart', item)
-            .then(res => {
-                if (res.data.insertedId) {
-                    refetch()
-                    Swal.fire(
-                        'Item Added!',
-                        'Item added to cart!',
-                        'success'
-                    )
-                }
-            })
-    }
+    };
 
     return (
         <div className="flex justify-between items-center my-4">

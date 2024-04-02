@@ -30,6 +30,7 @@ const Cart = () => {
             userId: user.email,
             userAddress: userData.userAddress,
             restaurantId: cart[0].restaurantId,
+            restaurantAddress: cart[0].restaurantAddress,
             items: cart.map(x => ({
                 itemId: x._id,
                 item_name: x.item_name,
