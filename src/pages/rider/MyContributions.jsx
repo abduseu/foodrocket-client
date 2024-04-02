@@ -10,6 +10,24 @@ const MyContributions = () => {
     const MyContributions = foodbank.filter(x => x.rider === user.email)
     const navigate = useNavigate()
 
+    const handleCompleteContribution = (id) => {
+        const donationInfo = {
+            status: 'completed',
+        }
+
+        axiosBase.put(`/foodbank/${id}`, donationInfo)
+            .then(res => {
+                if (res.data.modifiedCount > 0) {
+                    Swal.fire(
+                        'Task Completed!',
+                        'Task has been Accepted!',
+                        'success'
+                    )
+                    window.location.reload();
+                }
+            })
+    }
+
     const handleCancelContribution = (id) => {
         const donationInfo = {
             status: 'pending',
@@ -49,7 +67,10 @@ const MyContributions = () => {
                                         <div className="flex flex-col justify-end items-end font-semibold text-sm">
                                             <small>{x.restaurantAddress}</small>
                                             {x.status == 'picked-up' ?
-                                                <button onClick={() => handleCancelContribution(x._id)} className="btn btn-xs btn-error bg-red text-white">Cancel</button> :
+                                                <div className="flex justify-center gap-1">
+                                                    <button onClick={() => handleCompleteContribution(x._id)} className="btn btn-xs btn-success bg-green text-white">Complete</button>
+                                                    <button onClick={() => handleCancelContribution(x._id)} className="btn btn-xs btn-error bg-red text-white">Cancel</button>
+                                                </div> :
                                                 <span className="capitalize">{x.status}</span>
                                             }
                                         </div>
