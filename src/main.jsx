@@ -33,6 +33,8 @@ import ServicePage from "./pages/ServicePage";
 import AvailableTasks from "./pages/rider/AvailableTasks";
 import DonateFood from "./pages/restaurant/DonateFood";
 import PlacedDonations from "./pages/restaurant/PlacedDonations";
+import VolunteerTasks from "./pages/rider/VolunteerTasks";
+import VolunteerContributions from "./pages/rider/VolunteerContributions";
 
 
 
@@ -128,6 +130,14 @@ const router = createBrowserRouter([
       {
         path: '/received-task',
         element: <Private><ReceivedTasks/></Private>,
+      },
+      {
+        path: '/volunteer-task',
+        element: <Private><VolunteerTasks/></Private>,
+      },
+      {
+        path: '/volunteer-contributions',
+        element: <Private><VolunteerContributions/></Private>,
       },
 
       // Admin Dashboard
