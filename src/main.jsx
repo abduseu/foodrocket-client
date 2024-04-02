@@ -32,6 +32,7 @@ import Cart from "./pages/Cart";
 import ServicePage from "./pages/ServicePage";
 import AvailableTasks from "./pages/rider/AvailableTasks";
 import DonateFood from "./pages/restaurant/DonateFood";
+import PlacedDonations from "./pages/restaurant/PlacedDonations";
 
 
 
@@ -105,6 +106,10 @@ const router = createBrowserRouter([
       {
         path: '/donate-food',
         element: <Private><DonateFood /></Private>,
+      },
+      {
+        path: '/placed-donations',
+        element: <Private><PlacedDonations /></Private>,
       },
 
       // Rider Dashboard

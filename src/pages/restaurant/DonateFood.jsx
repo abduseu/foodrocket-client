@@ -14,6 +14,7 @@ const DonateFood = () => {
             restaurantName: restaurantData.name,
             restaurantAddress: restaurantData.address,
             restaurantPhone: restaurantData.phone,
+            restaurantEmail: restaurantData.email,
             details: e.target.details.value,
             weight: e.target.weight.value,
             status: "pending",

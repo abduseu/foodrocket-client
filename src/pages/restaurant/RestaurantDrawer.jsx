@@ -20,6 +20,7 @@ const RestaurantDrawer = () => {
                         <li><Link to={'/menu'}>Manage Menu</Link></li>
                         <li><Link to={'/received-orders'}>Received Orders</Link></li>
                         <li><Link to={'/donate-food'}>Donate Food</Link></li>
+                        <li><Link to={'/placed-donations'}>Placed Donations</Link></li>
                     </ul>
 
                 </div>
