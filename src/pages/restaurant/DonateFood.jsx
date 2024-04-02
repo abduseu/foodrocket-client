@@ -27,6 +27,7 @@ const DonateFood = () => {
                         'Donation placed successfully',
                         'success'
                     );
+                    e.target.reset();   //clear form
                 }
             })
     }
@@ -48,7 +49,7 @@ const DonateFood = () => {
                                     </div>
                                     <div>
                                         <h3>Total Weight (kg.):</h3>
-                                        <input type="number" name="weight" placeholder="ex. 0.5 KG" step="0.1" min="0" max="1" className="input input-bordered w-full" required />
+                                        <input type="number" name="weight" placeholder="ex. 0.5 KG" step="0.1" min="0" className="input input-bordered w-full" required />
                                     </div>
                                 </div>
                                 <div className="text-center pt-10">
