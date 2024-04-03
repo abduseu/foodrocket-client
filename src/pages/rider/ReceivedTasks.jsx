@@ -55,16 +55,16 @@ const ReceivedTasks = () => {
                 <div className="flex justify-center items-center">
                     <div className="text-center p-6 w-full">
                         <h3 className="text-2xl font-semibold mb-6 uppercase">Received Task</h3>
-                        <div className="text-xl space-y-4">
+                        <div className="space-y-4">
                             {ReceivedTasks.map(order => (
                                 <div key={order._id} className="flex justify-between items-center my-4 mx-auto">
                                     <div className="md:flex items-center border rounded-lg p-8 w-full">
                                         <div className="w-full">
                                             <div className='flex justify-between mb-2'>
-                                                <h3>Pick: <span>{order.restaurantId}</span></h3>
+                                                <h3>Pick: <span>{order.restaurantAddress}</span></h3>
                                                 <h3>Drop: <span>{order.userAddress}</span></h3>
                                             </div>
-                                            <div>
+                                            {/* <div>
                                                 {order.items.map((x, index) => (
                                                     <li key={x.itemId} className="flex justify-between gap-2">
                                                         <p className="font-semibold">{index + 1}. {x.item_name}</p>
@@ -74,10 +74,10 @@ const ReceivedTasks = () => {
                                                         </div>
                                                     </li>
                                                 ))}
-                                            </div>
-                                            <div className="flex justify-between">
+                                            </div> */}
+                                            <div className="flex justify-between font-semibold">
                                                 {order.status === "picked-up" && <p className="capitalize seco">{order.status}</p>}
-                                                {order.status === "completed" && <p className="capitalize green">{order.status}</p>}
+                                                {order.status === "completed" && <p className="capitalize">{order.status}</p>}
 
                                                 <p className="font-bold text-right">Total: <span>${order.totalPrice}</span></p>
                                             </div>

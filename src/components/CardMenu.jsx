@@ -4,7 +4,7 @@ import { axiosBase } from "../hooks/useAxios";
 import useCart from "../hooks/useCart";
 
 const CardMenu = ({ obj }) => {
-    const { _id, restaurantId, restaurantName, restaurantAdress, food_image, food_name, ingredients, price } = obj;
+    const { _id, restaurantId, restaurantName, restaurantAddress, food_image, food_name, ingredients, price } = obj;
     const { user } = useAuth();
     const [cart, refetch] = useCart();
 
@@ -18,7 +18,7 @@ const CardMenu = ({ obj }) => {
                 quantity: 1,
                 price,
                 restaurantName,
-                restaurantAdress,
+                restaurantAddress,
             };
 
             axiosBase.post('/cart', item)

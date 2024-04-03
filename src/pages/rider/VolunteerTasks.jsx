@@ -36,7 +36,7 @@ const VolunteerTasks = () => {
                 <div className="flex justify-center items-center">
                     <div className="text-center p-6 w-full">
                         <h3 className="text-2xl font-semibold mb-6 uppercase">Volunteer Task</h3>
-                        <div className="text-xl space-y-4">
+                        <div className="space-y-4">
                             {AvailableTasks.map((x, index) => (
                                 <div key={x._id} className="flex justify-between items-center my-4 mx-auto">
                                     <div className="md:flex items-center border rounded-lg p-8 w-full">
