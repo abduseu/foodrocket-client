@@ -35,6 +35,7 @@ import DonateFood from "./pages/restaurant/DonateFood";
 import PlacedDonations from "./pages/restaurant/PlacedDonations";
 import VolunteerTasks from "./pages/rider/VolunteerTasks";
 import MyContributions from "./pages/rider/MyContributions";
+import AddRestaurant from "./pages/admin/AddRestaurant";
 
 
 
@@ -148,6 +149,10 @@ const router = createBrowserRouter([
       {
         path: '/manage-users',
         element: <Private><ManageUsers/></Private>,
+      },
+      {
+        path: '/add-restaurant',
+        element: <Private><AddRestaurant/></Private>,
       },
       {
         path: '/manage-restaurants',
