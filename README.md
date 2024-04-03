@@ -14,9 +14,7 @@ FoodRocket is an online food delivery platform designed to connect restaurants, 
 
 5. **Order Tracking:** Users can track the status of their orders from preparation to delivery, using a live order tracking feature.
 
-6. **Rating and Reviews:** Users can rate and review restaurants and dishes based on their experiences, helping other users make informed decisions.
-
-7. **Favorite Restaurants:** Users can save their favorite restaurants for quick access and easy ordering in the future.
+6. **Favorite Restaurants:** Users can save their favorite restaurants for quick access and easy ordering in the future.
 
 
 ## Restaurant Features:
