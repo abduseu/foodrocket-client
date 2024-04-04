@@ -11,7 +11,7 @@ const HomePage = () => {
 
     return (
         <div>
-            <Offers obj={restaurants} />
+            {search === '' && <Offers obj={restaurants} />}
             <div className="grid md:grid-cols-4 gap-4">
                 {search === '' ?
                     restaurants.map(x => <CardRestaurant key={x._id} obj={x} />) :
