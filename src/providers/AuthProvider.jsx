@@ -10,6 +10,7 @@ const googleProvider = new GoogleAuthProvider()
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true)
+    const [search, setSearch] = useState('')        //searchbox value
 
     //Manage User
     useEffect(()=>{
@@ -48,7 +49,7 @@ const AuthProvider = ({ children }) => {
     }
         
 
-    const authInfo = { user, loading, signinGoogle, createEmail, signinEmail, logOut }
+    const authInfo = { user, loading, signinGoogle, createEmail, signinEmail, logOut, search, setSearch }
 
     return (
         <div>
