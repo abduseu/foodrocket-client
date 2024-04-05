@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 
 
 export const axiosBase = axios.create({
-    baseURL: 'http://localhost:5000',
-    // baseURL: 'https://foodrocket-server.vercel.app',
+    // baseURL: 'http://localhost:5000',
+    baseURL: 'https://foodrocket-server.vercel.app',
 })
 
 const useAxios = (url) => {

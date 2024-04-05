@@ -78,6 +78,7 @@ const ManageUsers = () => {
                                                     <option value="admin">Admin</option>
                                                     <option value="restaurant">Restaurant</option>
                                                     <option value="user">User</option>
+                                                    <option value="rider">Rider</option>
                                                     <option value="fraud">Fraud</option>
                                                 </select>
                                                 <input type="hidden" name="id" value={x._id} />
