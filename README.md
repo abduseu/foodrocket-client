@@ -1,6 +1,6 @@
 # FoodRocket - Online Food Delivery Platform
 
-FoodRocket is an online food delivery platform designed to connect restaurants, volunteers, and users to facilitate the donation and delivery of food. This project aims to provide an easy-to-use interface for users to order food from restaurants.
+FoodRocket is an food delivery web application designed to connect restaurants, delivery drivers, and users to facilitate the delivery of food. This project aims to provide an easy-to-use interface for users to order food from restaurants.
 
 ## User Features:
 
